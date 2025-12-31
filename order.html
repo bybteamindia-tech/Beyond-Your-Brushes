@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Custom Order</title>
+  <link rel="stylesheet" href="order.css">
+</head>
+<body>
+
+<section class="order-section">
+  <h2 id="serviceTitle"></h2>
+
+  <form id="orderForm">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <input type="email" name="email" placeholder="Email" required>
+
+    <input type="text" name="giftType" id="giftType" readonly>
+
+    <textarea name="message" placeholder="Describe your idea..." required></textarea>
+
+
+    <button type="submit">Send Request</button>
+  </form>
+
+  <p id="successMsg"></p>
+</section>
+
+<canvas id="particles"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<div class="success-check" id="successCheck">
+  <svg viewBox="0 0 52 52">
+    <circle cx="26" cy="26" r="25" fill="none"/>
+    <path fill="none" d="M14 27l7 7 17-17"/>
+  </svg>
+</div>
+<div class="success-box" id="successBox">
+  <svg viewBox="0 0 52 52" class="checkmark">
+    <circle cx="26" cy="26" r="25" fill="none"/>
+    <path fill="none" d="M14 27 l7 7 l16 -16"/>
+  </svg>
+  <p>Request Sent Successfully</p>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="order.js"></script>
+
+</body>
+</html>
+
+

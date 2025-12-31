@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #111, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* ===== ORDER SECTION ===== */
+.order-section {
+  width: 100%;
+  max-width: 420px;
+  padding: 30px 22px;
+  background: rgba(20, 20, 20, 0.95);
+  border-radius: 18px;
+  box-shadow:
+    0 0 25px rgba(255,255,255,0.05),
+    inset 0 0 20px rgba(255,255,255,0.03);
+}
+
+/* ===== TITLE ===== */
+#serviceTitle {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* ===== FORM ===== */
+#orderForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===== INPUTS ===== */
+#orderForm input,
+#orderForm textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #222;
+  background: #0d0d0d;
+  color: #fff;
+  font-size: 0.9rem;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+#orderForm input::placeholder,
+#orderForm textarea::placeholder {
+  color: #888;
+}
+
+#orderForm input:focus,
+#orderForm textarea:focus {
+  border-color: #fff;
+  box-shadow: 0 0 12px rgba(255,255,255,0.18);
+}
+
+#giftType {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* ===== TEXTAREA ===== */
+#orderForm textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+/* ===== BUTTON ===== */
+#orderForm button {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: transparent;
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.35s ease;
+  box-shadow:
+    0 0 12px rgba(255,255,255,0.2),
+    inset 0 0 8px rgba(255,255,255,0.1);
+}
+
+#orderForm button:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 25px rgba(255,255,255,0.8);
+}
+
+/* ===== SUCCESS MESSAGE ===== */
+#successMsg {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 768px) {
+  .order-section {
+    padding: 40px;
+    max-width: 480px;
+  }
+
+  #serviceTitle {
+    font-size: 1.8rem;
+  }
+}
+/* ===== LOADER ===== */
+.btn-loading {
+  pointer-events: none;
+  position: relative;
+  color: transparent !important;
+}
+
+.btn-loading::after {
+  content: "";
+  width: 22px;
+  height: 22px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg) translate(-50%, -50%); }
+}
+/* ===== SUCCESS TICK ===== */
+.success-box {
+  text-align: center;
+  margin-top: 25px;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.tick {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #00ff99;
+  margin: 0 auto 15px;
+  position: relative;
+  animation: pop 0.4s ease;
+}
+
+.tick::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 40px;
+  border-right: 4px solid #00ff99;
+  border-bottom: 4px solid #00ff99;
+  transform: rotate(45deg);
+  top: 10px;
+  left: 22px;
+}
+
+@keyframes pop {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#particles {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+.success-check{
+  width:80px;
+  height:80px;
+  margin:30px auto 0;
+  display:none;
+}
+
+.success-check svg{
+  width:100%;
+  height:100%;
+}
+
+.success-check circle{
+  stroke:#3cff9e;
+  stroke-width:3;
+  stroke-dasharray:157;
+  stroke-dashoffset:157;
+  animation:circleDraw .6s ease forwards;
+}
+
+.success-check path{
+  stroke:#3cff9e;
+  stroke-width:4;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-dasharray:48;
+  stroke-dashoffset:48;
+  animation:checkDraw .4s ease forwards;
+  animation-delay:.6s;
+}
+
+@keyframes circleDraw{
+  to{stroke-dashoffset:0}
+}
+
+@keyframes checkDraw{
+  to{stroke-dashoffset:0}
+}
+.success-box{
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  margin-top:30px;
+  text-align:center;
+}
+
+.success-box p{
+  margin-top:14px;
+  font-size:16px;
+  color:#b5ffb5;
+}
+
+/* Tick animation */
+.checkmark{
+  width:72px;
+  height:72px;
+  stroke:#4cff4c;
+  stroke-width:4;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  animation:scaleIn .4s ease forwards;
+}
+
+.checkmark circle{
+  stroke-dasharray:166;
+  stroke-dashoffset:166;
+  animation:stroke .6s ease forwards;
+}
+
+.checkmark path{
+  stroke-dasharray:48;
+  stroke-dashoffset:48;
+  animation:stroke .4s ease .5s forwards;
+}
+
+@keyframes stroke{
+  to{stroke-dashoffset:0}
+}
+
+@keyframes scaleIn{
+  0%{transform:scale(.6);opacity:0}
+  100%{transform:scale(1);opacity:1}
+}
+
+/* 📱 MOBILE */
+@media(max-width:768px){
+  .checkmark{
+    width:58px;
+    height:58px;
+  }
+  .success-box p{
+    font-size:14px;
+  }
+}
